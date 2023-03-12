@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery Demonstration</title>
+    <style>
+      table,
+      tr,
+      td,
+      th {
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+
+      th {
+        background-color: #ddd;
+      }
+
+      td,
+      th {
+        padding: 0.5em;
+      }
+
+      table {
+        width: 100%;
+        max-width: 360px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Students Table</h1>
+    <table id="student-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Major</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Define array of students
+        var students = [
+          { name: "Chandrakant Jena", age: 22, major: "Computer Science" },
+          { name: "Bruce Wayne", age: 40, major: "Electrical Engineer" },
+          { name: "Walter White", age: 55, major: "Chemist" },
+        ];
+
+        // Loop through array of students and append rows to table
+        $.each(students, function (index, student) {
+          var row =
+            "<tr><td>" +
+            student.name +
+            "</td><td>" +
+            student.age +
+            "</td><td>" +
+            student.major +
+            "</td></tr>";
+          $("#student-table tbody").append(row);
+        });
+      });
+    </script>
+  </body>
+</html>

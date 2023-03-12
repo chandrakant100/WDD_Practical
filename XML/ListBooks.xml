@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="Rules.css"?>
+<library>
+<heading>List of Books in Library</heading>
+  <div>
+    <book>
+      <title lang="en">Programming with C</title>
+      <author>Dennis Ritchie</author>
+      <year>2005</year>
+      <price>130.00</price>
+    </book>
+  </div>
+  <div>
+    <book>
+      <title lang="en">Wed Developement and Design</title>
+      <author>John Duckett</author>
+      <year>2012</year>
+      <price>229.99</price>
+    </book>
+  </div>
+  <div>
+    <book category="web">
+      <title lang="en">Computer Organization and Architechture</title>
+      <author>William Stallings</author>
+      <year>2003</year>
+      <price>349.99</price>
+    </book>
+  </div>
+  <div>
+    <book category="web" cover="paperback">
+      <title lang="en">Buisness Communication</title>
+      <author>Bipin Bihari Dash</author>
+      <year>2010</year>
+      <price>699.95</price>
+    </book>
+  </div>
+  <div>
+    <book category="math" cover="paperback">
+      <title lang="en">Computational Mathematics and statistics</title>
+      <author>D. Mortari</author>
+      <year>2020</year>
+      <price>700</price></book>
+  </div>
+    <div>
+    <book category="Code" cover="paperback">
+      <title lang="en">Advanced JAVA</title>
+      <author>Joshua Bloch</author>
+      <year>2011</year>
+      <price>800</price></book>
+  </div>
+  <div>
+    <book category="Networking" cover="paperback">
+      <title lang="en">Computer Networking</title>
+      <author>Erick Stack</author>
+      <year>2015</year>
+      <price>1199</price></book>
+  </div>
+</library>

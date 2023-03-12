@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function validForm() {
+        var name = document.myform.name.value;
+        var password = document.myform.password.value;
+
+        if (name == null || name == "") {
+          alert("Name cant be blank");
+          return false;
+        } else if (password.length < 6) {
+          alert("Passord must me greater than 6 digits");
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form name="myform" onsubmit="return validForm()">
+      <label for="name">Name</label>
+      <input type="text" name="" id="name" /><br />
+      <label for="password">Password</label>
+      <input type="password" name="" id="password" />
+      <input type="submit" value="register" />
+    </form>
+  </body>
+</html>

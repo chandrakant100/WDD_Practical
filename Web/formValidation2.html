@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form validation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        line-height: 1.6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      form {
+        width: 95%;
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 2em;
+        border: 1px solid #ccc;
+      }
+      button {
+        margin-top: 16px;
+        background-color: blue;
+        color: white;
+        display: block;
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        text-transform: uppercase;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="form" onsubmit="return validate()">
+      <center>
+        <h1>Student Registration form</h1>
+      </center>
+      <table>
+        <tr>
+          <td>
+            <label for="fullname">Full Name:</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="fullname"
+              placeholder="Enter full name"
+              id="fullname"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter email id"
+              id="email"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="Mobile">Mobile Number:</label></td>
+          <td>
+            <input
+              type="text"
+              name="Mobile"
+              placeholder="Enter Mobile Number"
+              id="mobile"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="Gender">Gender:</label><br /></td>
+          <td>
+            Male<input type="radio" name="Gender" id="Gender" /> Female<input
+              type="radio"
+              name="Gender"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="regno">Registration No:</label></td>
+          <td>
+            <input
+              type="text"
+              name="regno"
+              placeholder="10 digit regNo"
+              id="regno"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="dob">DOB:</label></td>
+          <td><input type="date" name="dob" id="dob" required /></td>
+        </tr>
+        <tr>
+          <td>
+            <label for="aadhar">Aadhar No:</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="aadhar"
+              id="aadhar"
+              placeholder="12 digit number"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="address">Address:</label></td>
+          <td>
+            <textarea
+              name="address"
+              id="address"
+              cols="30"
+              rows="5"
+              placeholder="Full Address"
+              required
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="course">Course:</label></td>
+          <td>
+            <select name="course">
+              <option value="MCA">MCA</option>
+              <option value="Bt">Btech</option>
+              <option value="Mt">MTech</option>
+              <option value="Msc">MSc</option>
+              <option value="intMsc">IntMsc</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="pass">Password:</label></td>
+          <td>
+            <input
+              type="password"
+              id="pass"
+              name="pass"
+              placeholder="6 Digit Password"
+              requiured
+            />
+          </td>
+        </tr>
+      </table>
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      function validate() {
+        const form = document.getElementById("form");
+        const name = document.getElementById("fullname").value;
+        const email = document.getElementById("email").value;
+        const mobile = document.getElementById("mobile").value;
+        const aadhar = document.getElementById("aadhar").value;
+        const password = document.getElementById("pass").value;
+        const reg = document.getElementById("regno").value;
+
+        let error = "";
+        if (name === "") {
+          error = "Please enter full name!";
+        } else if (email === "") {
+          error = "Email is required!";
+        } else if (email.indexOf("@") === -1) {
+          error = "Please enter a valid email!";
+        } else if (mobile.length != 10) {
+          error = "invalid Mobile Number";
+        } else if (aadhar.length != 12) {
+          error = "invalid aaadhar number";
+        } else if (password != 6) {
+          error = "invalid password length";
+        } else if (reg != 10) {
+          error = "invalid regNo";
+        } else {
+          error = "";
+        }
+        if (error) {
+          alert(error);
+          return false;
+        } else {
+          alert("Form submitted successfully!");
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

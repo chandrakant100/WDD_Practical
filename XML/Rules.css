@@ -1,0 +1,27 @@
+div > book > title{
+    background-color: teal;
+    font-size:xx-large
+}
+library {
+    color: white;
+    background-color : gray;
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;    
+}
+heading {
+    color: yellow;
+    font-size : 40px;
+    background-color : rgb(65, 8, 8);;
+}
+heading, title, author, year, price {
+    display : block;
+    font-family: Arial, Helvetica, sans-serif;
+}
+title {
+    font-size : 25px;
+    font-weight : bold;
+}
+div > book > author{
+    font-size: x-large;
+}
