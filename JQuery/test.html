@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("p").click(function () {
+          $(this).hide();
+        });
+      });
+
+      $(document).ready(function () {
+        $("#button1").click(function () {
+          $("p").css("color", "blue");
+        });
+      });
+
+      <!-- AJAX and Jquery -->
+      $(document).ready(function () {
+        $("#button2").click(function () {
+          $("#demo").load("demo.txt");
+        });
+      });
+
+      $(document).ready(function () {
+        $("#button1").click(function () {
+          $("p").slideDown();
+        });
+      });
+    </script>
+    <style>
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Chandrakant Jena</p>
+    <p>Bruce Wayne</p>
+    <p>Walter White</p>
+    <div id="demo">Change The content</div>
+    <button id="button1">Click me</button>
+    <button id="button2">change</button>
+  </body>
+</html>
